@@ -1,0 +1,18 @@
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 512 512"
+        height="1rem"
+        width="1rem"
+        class="text-xl absolute top-1/2 transform -translate-y-1/2 ml-4 text-gray-700"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="48"
+          d="M244 400L100 256l144-144M120 256h292"
+        ></path>
+      </svg>

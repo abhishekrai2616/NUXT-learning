@@ -9,7 +9,17 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Nunito Sans', 'sans-serif'],
+      },
+      screens: {
+        'custom-sm': '520px', 
+        'custom-md': '900px', 
+        'custom-lg': '1280px',
+        'custom-z': {'raw': '(min-width: 540px) and (max-width: 640px)'},
+      },
+    },
   },
   plugins: [],
 }
