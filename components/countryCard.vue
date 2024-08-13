@@ -5,7 +5,7 @@
       class="bg-cover bg-center h-52 custom-sm:h-44 w-full bg-white rounded-t-md border border-gray-300"
       :style="{ backgroundImage: `url(${country.flag})` }"
     ></div>
-      <div class="p-10 pb-20 bg-white flex flex-col rounded-b-md">
+      <div class="p-10 bg-white flex flex-col rounded-b-md">
         <h2 class="font-bold text-xl mb-6">{{ country.name }}</h2>
         <p class="text-gray-700 text-base mb-1"><strong>Population:</strong> {{ country.population }}</p>
         <p class="text-gray-700 text-base mb-1"><strong>Region:</strong> {{ country.region }}</p>

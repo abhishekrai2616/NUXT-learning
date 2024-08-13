@@ -23,8 +23,18 @@
 
 <script setup>
 const selectedRegion = ref('');
+const { countries, setCountries } = useCountries();
 
-const { fetchRegions } = defineProps(['fetchRegions']);
+const fetchRegions = async (query) => {
+  try {
+    const data = await $fetch(`https://restcountries.com/v2/region/${query}`);
+    setCountries(data);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    pending.value = false;
+  }
+};
 
 watch(selectedRegion, (newValue) => {
   if (newValue) {
@@ -34,5 +44,4 @@ watch(selectedRegion, (newValue) => {
 </script>
 
 <style>
-/* Add any additional styles here if needed */
 </style>
