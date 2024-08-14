@@ -20,10 +20,11 @@ const searchQuery = ref('');
 
 const { countries, setCountries } = useCountries();
 const pending = ref(false);
+	const { url } = useRuntimeConfig().public;
 
 const fetchCountries = async (query) => {
   try {
-    const data = await $fetch(`https://restcountries.com/v2/name/${query}`);
+    const data = await $fetch(`${url}/name/${query}`);
     setCountries(data);
   } catch (err) {
     console.log(err);
@@ -34,7 +35,7 @@ const fetchCountries = async (query) => {
 
 const findCountries = async () => {
   try {
-    const data = await $fetch(`https://restcountries.com/v2/all`);
+    const data = await $fetch(`${url}/all`);
     setCountries(data);
   } catch (err) {
     console.log(err);

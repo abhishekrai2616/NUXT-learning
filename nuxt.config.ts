@@ -15,5 +15,10 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap' }
       ]
     }
-  }
+  },
+  runtimeConfig: {
+		public: {
+			url: "",
+		},
+	},
 })

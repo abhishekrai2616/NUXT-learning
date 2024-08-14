@@ -61,10 +61,11 @@
 <script setup>
   const { name } = useRoute().params;
   const country = ref([]);
+  	const { url } = useRuntimeConfig().public;
  
   const fetchCountry = async () => {
     try {
-      const data = await $fetch(`https://restcountries.com/v2/name/${name}`);
+      const data = await $fetch(`${url}/name/${name}`);
       country.value = data;
     } catch (err) {
       console.log(err);

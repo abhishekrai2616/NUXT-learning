@@ -24,10 +24,11 @@
 <script setup>
 const selectedRegion = ref('');
 const { countries, setCountries } = useCountries();
+	const { url } = useRuntimeConfig().public;
 
 const fetchRegions = async (query) => {
   try {
-    const data = await $fetch(`https://restcountries.com/v2/region/${query}`);
+    const data = await $fetch(`${url}/region/${query}`);
     setCountries(data);
   } catch (err) {
     console.log(err);

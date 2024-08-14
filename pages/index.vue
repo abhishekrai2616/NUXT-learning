@@ -21,8 +21,9 @@ const pending = ref(false);
 
 const findCountries = async () => {
   pending.value = true;
+  	const { url } = useRuntimeConfig().public;
   try {
-    const data = await $fetch(`https://restcountries.com/v2/all`);
+    const data = await $fetch(`${url}/all`);
     setCountries(data);
   } catch (err) {
     console.log(err);
