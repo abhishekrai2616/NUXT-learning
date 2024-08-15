@@ -1,12 +1,25 @@
 export const useCountries = () => {
-	const countries = useState("countries", () => {});
+	const { url } = useRuntimeConfig().public;
 
-	const setCountries = (info) => {
-		countries.value = info;
+	const countries = useState("countries", () => {});
+	const isLoading = useState("isLoading", () => false);
+
+	const fetchCountries = async (path) => {
+		isLoading.value = true;
+		try {
+			const data = await $fetch(`${url}${path}`);
+			countries.value = data;
+			return data;
+		} catch (err) {
+			console.log(err);
+		} finally {
+			isLoading.value = false;
+		}
 	};
 
 	return {
 		countries,
-		setCountries,
+		fetchCountries,
+		isLoading,
 	};
 };
